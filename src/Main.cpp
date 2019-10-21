@@ -1,12 +1,12 @@
 #include <iostream>
 #include "./Constants.h"
 #include "./Game.h"
-
+  
 int main(int argc, char *args[]) {
   Game *game = new Game();
 
-  game->initialize(WINDOW_WIDTH, WINDOW_HEIGHT);
-   
+  game->Initialize(WINDOW_WIDTH, WINDOW_HEIGHT);
+
   std::cout << "Game is running" << std::endl;
 
   while (game->IsRunning())
@@ -19,5 +19,5 @@ int main(int argc, char *args[]) {
   game -> Destroy();
 
 
-  return 0;
-}  
+  return 0;  
+}   
