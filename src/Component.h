@@ -4,13 +4,16 @@
 class Entity;
 
 class Component {
-private:
-  /* data */
 public:
-  Entity *owner;
-  virtual void Initialize() {}
-  virtual void Update(float deltaTime) {}
-  virtual void Render() {}
+    Entity *owner;
+
+    virtual ~Component() {}
+
+    virtual void Initialize() {}
+
+    virtual void Update(float deltaTime) {}
+
+    virtual void Render() {}
 };
 
-#endif // COMPONENT_H
+#endif

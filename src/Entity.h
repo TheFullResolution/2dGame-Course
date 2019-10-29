@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <string>
-
 #include "./EntityManager.h"
 #include "./Component.h"
 
@@ -16,13 +15,12 @@ private:
     EntityManager &manager;
     bool isActive;
     std::vector<Component *> components;
-
 public:
+    std::string name;
+
     Entity(EntityManager &manager);
 
     Entity(EntityManager &manager, std::string name);
-
-    ~Entity();
 
     void Update(float deltaTime);
 
@@ -32,12 +30,9 @@ public:
 
     bool IsActive() const;
 
-    std::string name;
-
     template<typename T, typename... TArgs>
     T &AddComponent(TArgs &&... args) {
         T *newComponent(new T(std::forward<TArgs>(args)...));
-
         newComponent->owner = this;
         components.emplace_back(newComponent);
         newComponent->Initialize();
@@ -45,4 +40,4 @@ public:
     }
 };
 
-#endif // ENTITY_H
+#endif

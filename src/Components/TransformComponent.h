@@ -1,10 +1,10 @@
 #ifndef TRANSFORMCOMPONENT_H
 #define TRANSFORMCOMPONENT_H
 
-#include "../../lib/glm/glm.hpp"
 #include "../EntityManager.h"
-#include "../Game.h"
+#include "../../lib/glm/glm.hpp"
 #include <SDL2/SDL.h>
+#include "../Game.h"
 
 class TransformComponent : public Component {
 public:
@@ -14,8 +14,7 @@ public:
     int height;
     int scale;
 
-    TransformComponent(int posX, int posY, int velX, int velY, int w, int h,
-                       int s) {
+    TransformComponent(int posX, int posY, int velX, int velY, int w, int h, int s) {
         position = glm::vec2(posX, posY);
         velocity = glm::vec2(velX, velY);
         width = w;
@@ -23,7 +22,9 @@ public:
         scale = s;
     }
 
-    void Initialize() override {}
+    void Initialize() override {
+
+    }
 
     void Update(float deltaTime) override {
         position.x += velocity.x * deltaTime;
@@ -31,11 +32,15 @@ public:
     }
 
     void Render() override {
-        SDL_Rect transformRectangle = {(int) position.x, (int) position.y, width,
-                                      height};
+        SDL_Rect transformRectangle = {
+                (int) position.x,
+                (int) position.y,
+                width,
+                height
+        };
         SDL_SetRenderDrawColor(Game::renderer, 255, 255, 255, 255);
         SDL_RenderFillRect(Game::renderer, &transformRectangle);
     }
 };
 
-#endif // TRANSFORMCOMPONENT_H
+#endif
