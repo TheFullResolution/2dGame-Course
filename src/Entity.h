@@ -30,6 +30,8 @@ public:
 
     bool IsActive() const;
 
+    void ListAllComponents();
+
     template<typename T, typename... TArgs>
     T &AddComponent(TArgs &&... args) {
         T *newComponent(new T(std::forward<TArgs>(args)...));

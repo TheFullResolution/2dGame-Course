@@ -1,4 +1,6 @@
 #include "./Entity.h"
+#include <typeinfo>
+#include <iostream>
 
 Entity::Entity(EntityManager &manager) : manager(manager) {
     this->isActive = true;
@@ -26,4 +28,10 @@ void Entity::Destroy() {
 
 bool Entity::IsActive() const {
     return this->isActive;
+}
+
+void Entity::ListAllComponents() {
+    for (auto component: components) {
+        std::cerr << "Component<" << typeid(component). << std::endl;
+    }
 }

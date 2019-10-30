@@ -50,6 +50,9 @@ void Game::Initialize(int width, int height) {
 void Game::LoadLevel(int levelNumber) {
     Entity &newEntity(manager.AddEntity("projectile"));
     newEntity.AddComponent<TransformComponent>(0, 0, 20, 20, 32, 32, 1);
+    newEntity.AddComponent<TransformComponent>(15, 52, 10, 10, 30, 20, 1);
+
+    manager.ListAllEntities();
 }
 
 void Game::ProcessInput() {
