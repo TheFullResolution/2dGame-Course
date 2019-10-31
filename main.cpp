@@ -1,8 +1,7 @@
-#include <iostream>
-#include "./Constants.h"
-#include "./Game.h"
+#include "src/Constants.h"
+#include "src/Game.h"
 
-int main(int argc, char *args[]) {
+int main() {
     Game *game = new Game();
 
     game->Initialize(WINDOW_WIDTH, WINDOW_HEIGHT);

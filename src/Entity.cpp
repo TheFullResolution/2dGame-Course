@@ -1,5 +1,4 @@
 #include "./Entity.h"
-#include <typeinfo>
 #include <iostream>
 
 Entity::Entity(EntityManager &manager) : manager(manager) {
@@ -32,6 +31,6 @@ bool Entity::IsActive() const {
 
 void Entity::ListAllComponents() {
     for (auto component: components) {
-        std::cerr << "Component<" << typeid(component). << std::endl;
+        std::cerr << "Component<" << typeid(component).name() << std::endl;
     }
 }
