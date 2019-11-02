@@ -24,7 +24,7 @@ public:
 
     unsigned int GetEntityCount();
 
-    void ListAllEntities();
+    void ListAllEntities() const;
 };
 
 #endif

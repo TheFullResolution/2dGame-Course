@@ -19,3 +19,4 @@ void AssetManager::AddTexture(std::string textureId, const char *filePath) {
 SDL_Texture * AssetManager::GetTexture(const std::string& textureId) {
     return textures[textureId];
 }
+
