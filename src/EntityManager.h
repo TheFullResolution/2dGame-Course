@@ -1,30 +1,30 @@
 #ifndef ENTITYMANAGER_H
 #define ENTITYMANAGER_H
 
-#include "./Entity.h"
 #include "./Component.h"
+#include "./Entity.h"
 #include <vector>
-
 
 class EntityManager {
 private:
-    std::vector<Entity *> entities;
+  std::vector<Entity *> entities;
+
 public:
-    void ClearData();
+  void ClearData();
 
-    void Update(float deltaTime);
+  void Update(float deltaTime);
 
-    void Render();
+  void Render();
 
-    bool HasNoEntities();
+  bool HasNoEntities();
 
-    Entity &AddEntity(std::string entityName);
+  Entity &AddEntity(std::string entityName);
 
-    std::vector<Entity *> GetEntities() const;
+  std::vector<Entity *> GetEntities() const;
 
-    unsigned int GetEntityCount();
+  unsigned int GetEntityCount();
 
-    void ListAllEntities() const;
+  void ListAllEntities() const;
 };
 
 #endif

@@ -5,15 +5,15 @@ class Entity;
 
 class Component {
 public:
-    Entity *owner;
+  Entity *owner;
 
-    virtual ~Component() {}
+  virtual ~Component() {}
 
-    virtual void Initialize() {}
+  virtual void Initialize() {}
 
-    virtual void Update(float deltaTime) {}
+  virtual void Update(float deltaTime) {}
 
-    virtual void Render() {}
+  virtual void Render() {}
 };
 
 #endif

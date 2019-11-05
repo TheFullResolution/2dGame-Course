@@ -1,40 +1,41 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <SDL.h>
-#include "./Entity.h"
 #include "./Component.h"
+#include "./Entity.h"
 #include "./EntityManager.h"
+#include <SDL.h>
 
 class AssetManager;
 
 class Game {
 private:
-    bool isRunning;
-    SDL_Window *window;
+  bool isRunning;
+  SDL_Window *window;
+
 public:
-    Game();
+  Game();
 
-    ~Game();
+  ~Game();
 
-    int ticksLastFrame = 0;
+  int ticksLastFrame = 0;
 
-    bool IsRunning() const;
+  bool IsRunning() const;
 
-    static SDL_Renderer *renderer;
-    static AssetManager *assetManager;
-    static SDL_Event event;
-    void LoadLevel(int levelNumber);
+  static SDL_Renderer *renderer;
+  static AssetManager *assetManager;
+  static SDL_Event event;
+  void LoadLevel(int levelNumber);
 
-    void Initialize(int width, int height);
+  void Initialize(int width, int height);
 
-    void ProcessInput();
+  void ProcessInput();
 
-    void Update();
+  void Update();
 
-    void Render();
+  void Render();
 
-    void Destroy();
+  void Destroy();
 };
 
 #endif
