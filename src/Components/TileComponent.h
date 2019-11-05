@@ -38,7 +38,10 @@ public:
 
   virtual ~TileComponent() { SDL_DestroyTexture(texture); }
 
-  void Update(float deltaTime) override {}
+  void Update(float deltaTime) override {
+    destinationRectangle.x = position.x - Game::camera.x;
+    destinationRectangle.y = position.y - Game::camera.y;
+  }
 
   void Render() override {
     TextureManager::Draw(texture, sourceRectangle, destinationRectangle,
