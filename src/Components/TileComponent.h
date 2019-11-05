@@ -24,8 +24,8 @@ public:
 
     sourceRectangle.x = sourceRectX;
     sourceRectangle.y = sourceRectY;
-    sourceRectangle.h = tileScale;
-    sourceRectangle.w = tileScale;
+    sourceRectangle.h = tileSize;
+    sourceRectangle.w = tileSize;
 
     destinationRectangle.x = x;
     destinationRectangle.y = y;

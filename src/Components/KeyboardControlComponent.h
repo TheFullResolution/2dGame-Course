@@ -23,9 +23,7 @@ public:
 
   KeyboardControlComponent() {}
 
-  KeyboardControlComponent(std::string upKey, std::string downKey,
-                           std::string rightKey, std::string leftKey,
-                           std::string shootKey) {
+  KeyboardControlComponent(std::string upKey, std::string rightKey, std::string downKey, std::string leftKey, std::string shootKey) {
     this->upKey = GetSDLKeyStringCode(upKey);
     this->downKey = GetSDLKeyStringCode(downKey);
     this->rightKey = GetSDLKeyStringCode(rightKey);
@@ -34,16 +32,11 @@ public:
   }
 
   std::string GetSDLKeyStringCode(std::string key) {
-    if (key == "up")
-      return "1073741906";
-    if (key == "right")
-      return "1073741905";
-    if (key == "left")
-      return "1073741904";
-    if (key == "down")
-      return "1073741903";
-    if (key == "space")
-      return "32";
+    if (key.compare("up") == 0) return "1073741906";
+    if (key.compare("down") == 0) return "1073741905";
+    if (key.compare("left") == 0) return "1073741904";
+    if (key.compare("right") == 0) return "1073741903";
+    if (key.compare("space") == 0) return "32";
     return std::to_string(static_cast<int>(key[0]));
   }
 
@@ -56,31 +49,29 @@ public:
     if (Game::event.type == SDL_KEYDOWN) {
       std::string keyCode = std::to_string(Game::event.key.keysym.sym);
 
-      if (keyCode == upKey) {
-        transform->velocity.y = -10;
+      if (keyCode.compare(upKey) == 0) {
+        transform->velocity.y = -40;
         transform->velocity.x = 0;
         sprite->Play("UpAnimation");
       }
-
-      if (keyCode == rightKey) {
+      if (keyCode.compare(rightKey) == 0) {
         transform->velocity.y = 0;
-        transform->velocity.x = 10;
+        transform->velocity.x = 40;
         sprite->Play("RightAnimation");
       }
-
-      if (keyCode == downKey) {
-        transform->velocity.y = 10;
+      if (keyCode.compare(downKey) == 0) {
+        transform->velocity.y = 40;
         transform->velocity.x = 0;
         sprite->Play("DownAnimation");
       }
-
-      if (keyCode == leftKey) {
+      if (keyCode.compare(leftKey) == 0) {
         transform->velocity.y = 0;
-        transform->velocity.x = -10;
+        transform->velocity.x = -40;
         sprite->Play("LeftAnimation");
       }
-
-      if (keyCode == shootKey) {
+      if (keyCode.compare(shootKey) == 0) {
+        // TODO:
+        // Shoot projectiles when 'shoot' key is pressed
       }
     }
     if (Game::event.type == SDL_KEYUP) {
