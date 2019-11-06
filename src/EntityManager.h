@@ -19,8 +19,6 @@ public:
   bool HasNoEntities();
 
   Entity &AddEntity(std::string entityName, LayerType layer);
-  std::string CheckEntityCollisions(Entity& entity) const;
-
   std::vector<Entity *> GetEntities() const;
   std::vector<Entity *> GetEntitiesByLayer(LayerType layer) const;
 
@@ -28,6 +26,7 @@ public:
   unsigned int GetEntityCount();
 
   void ListAllEntities() const;
+  CollisionType CheckCollisions() const;
 };
 
 #endif
