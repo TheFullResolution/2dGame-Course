@@ -37,6 +37,10 @@ public:
 
   void ListAllComponents();
 
+  template <typename T> bool HasComponent() const {
+    return componentTypeMap.count(&typeid(T));
+  }
+
   template <typename T, typename... TArgs> T &AddComponent(TArgs &&... args) {
     T *newComponent(new T(std::forward<TArgs>(args)...));
     newComponent->owner = this;

@@ -15,5 +15,5 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 include_directories(lib/glm)
 include_directories(lib/lua)
 
-add_executable(2dgameengine main.cpp src/AssetManager.cpp src/Entity.cpp src/EntityManager.cpp src/Game.cpp src/TextureManager.cpp src/Animation.cpp src/Animation.h src/Map.cpp src/Map.h)
+add_executable(2dgameengine main.cpp src/AssetManager.cpp src/Entity.cpp src/EntityManager.cpp src/Game.cpp src/TextureManager.cpp src/Animation.cpp src/Animation.h src/Map.cpp src/Map.h src/Collision.cpp src/Collision.h src/Components/ColliderComponent.h)
 target_link_libraries(2dgameengine ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
