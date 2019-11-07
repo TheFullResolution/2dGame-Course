@@ -31,4 +31,3 @@ void Entity::ListAllComponents() {
     std::cout << "Component<" << mapElement.first->name() << ">" << std::endl;
   }
 }
-
