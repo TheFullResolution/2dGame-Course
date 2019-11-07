@@ -27,6 +27,7 @@ public:
 
   void ListAllEntities() const;
   CollisionType CheckCollisions() const;
+  void DestroyInactiveEntities();
 };
 
 #endif
