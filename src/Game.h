@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "./Component.h"
+#include "../lib/lua/sol.hpp"
 #include "./Entity.h"
 #include "./EntityManager.h"
 #include <SDL.h>
